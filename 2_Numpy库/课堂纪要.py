@@ -143,11 +143,12 @@ ndarray运算: (核心)
         # 与matlab差不多
     3.3.3 形状修改
         ndarray.reshape(shape) 返回新的ndarray，原始数据没有改变, # 只是将原来的数据进行了分割
+            shape=(a, b) , 当a=-1时, 表示自动计算
         ndarray.resize(shape) 没有返回值, 对原始的ndarray进行了修改, 效果与reshape一样
             前两个都没有对行列进行转换, 只是简单的分割
         ndarray.T 转置 行变成列，列变成行, 转至是对行列进行转换. (是ndarray的属性, 修改原数组)
     3.3.4 类型修改
-        ndarray.astype(type)
+        ndarray.astype(type) -> 通用的
         ndarray序列化到本地 (序列化就是将python的数据, 编成流(bytes), 从而保存在本地)
         ndarray.tostring() # 序列化到本地
     3.3.5 数组的去重
@@ -172,7 +173,7 @@ ndarray运算: (核心)
             np.logical_and(逻辑矩阵, 逻辑矩阵)
             np.logical_or(逻辑矩阵, 逻辑矩阵)
             # 例子: np.logical_and(temp > 0.5, temp < 0.1) 返回的仍然是逻辑矩阵
-                实际上就是矩阵做逻辑运算
+                实际上就是矩阵做逻辑运算(
 
     统计运算:
         统计指标函数
@@ -211,7 +212,7 @@ ndarray运算: (核心)
                 当操作两个数组的时, numpy会逐个比较他们的shape(构成的元组tuple),
                 只有在每个维度满足:
                     - 维数相等
-                    - shape(其中相对应的一个地方为1.)
+                    - shape(其中相对应的一个维度为1.)
                 时, 两个数组才能够进行数组的运算.
                 (这个维度, 要么维数相等, 要么shape有一方为1)
                 最终取每个维度最大的, 为最后的形状
