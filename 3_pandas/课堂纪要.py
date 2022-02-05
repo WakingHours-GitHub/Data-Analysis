@@ -94,28 +94,52 @@ Pandas
 4.2 基本数据操作
     4.2.1 索引操作
         1）直接索引
-            先列后行
+            只能是先列后行
         2）按名字索引
             loc
-        3）按数字索引
+        3）按数字索引 -> Numpy方式
             iloc
         4）组合索引
+            ix
+            不过未来版本可能会被移除
             数字、名字
+    4.2.2 赋值操作:
+        通过索引位置直接修改即可
     4.2.3 排序
         对内容排序
+        API:
+            df.sort_value(key=, ascending=)对内容进行排序
+                单个键或者多个键进行排序, 默认升序
+                ascending=False降序
+                ascending=True升序 (默认)
+        可用使用的对象:
             dataframe
             series
         对索引排序
+            df.sort_index() 对索引进行排序
+
             dataframe
             series
+
+
 4.3 DataFrame运算
     算术运算
+        即可用使用算术运算符也可以使用算术运算函数
+        .add()
+        .sub()
+
     逻辑运算
         逻辑运算符
+            <, >, |, &
             布尔索引
         逻辑运算函数
-            query()
-            isin()
+            query(expr)
+                expr: 查询字符串
+            isin(value)
+                判断是否含有value
+                例子:
+                # 判断'turnover'是否有4.19, 2.39
+                data[data["turnover"].isin([4.19, 2.39])]
     统计运算
         min max mean median var std
         np.argmax()
@@ -123,6 +147,8 @@ Pandas
     自定义运算
         apply(func, axis=0)True
             func:自定义函数
+            axis=0, 默认是按照列, axis=1按照行
+
 4.4 Pandas画图
     sr.plot()
 4.5 文件读取与存储
