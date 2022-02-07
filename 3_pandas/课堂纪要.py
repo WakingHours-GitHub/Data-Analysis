@@ -67,7 +67,7 @@ Pandas
         存储三维结构的面板数据.
         pd.Panel(data=None, items=None, major_axis=None, minor_axis=None, copy=False, dtype=None)
         DataFrame的容器
-        但是: Pandas从版本0.20.0开始启用, 推荐的是用于表示3D数据的方法的DataFrame上的MultiIndex方法
+        但是: Pandas从版本0.20.0开始弃用, 推荐的是用于表示3D数据的方法的DataFrame上的MultiIndex方法
 
     3 Series
         带索引的一维数组
@@ -96,9 +96,9 @@ Pandas
         1）直接索引
             只能是先列后行
         2）按名字索引
-            loc
+            .loc
         3）按数字索引 -> Numpy方式
-            iloc
+            .iloc[]
         4）组合索引
             ix
             不过未来版本可能会被移除
@@ -151,6 +151,12 @@ Pandas
 
 4.4 Pandas画图
     sr.plot()
+    pd.DataFrame.plot(x=None, y=None, king='line')
+        x:
+
+        kind: 图形的类型。例如: line, bar, pie, ...
+
+
 4.5 文件读取与存储
     4.5.1 CSV
         pd.read_csv(path)
