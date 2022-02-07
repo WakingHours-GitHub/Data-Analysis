@@ -153,29 +153,48 @@ Pandas
     sr.plot()
     pd.DataFrame.plot(x=None, y=None, king='line')
         x:
-
+        y:
         kind: 图形的类型。例如: line, bar, pie, ...
 
 
 4.5 文件读取与存储
     4.5.1 CSV
-        pd.read_csv(path)
-            usecols=
-            names=
+        pd.read_csv(path, names=None, usecols=None,  )
+            usecols=[], 写入想要读取的字段.
+            names=字段名称, 可以在加载进来的时候,直接赋予字段名称
         dataframe.to_csv(path)
-            columns=[]
-            index=False
-            header=False
-    4.5.2 HDF5
-        hdf5 存储 3维数据的文件
+            参数:
+            path: 要存储的路径地址
+            columns=[], 保存特定列的数据
+            mode:'w'重写, 'a': 追加
+            index=False, 是否写(行)索引
+            header=False, 是否写头字段.
+
+    4.5.2 HDF5 ,二进制文件.
+        hdg5文件的读取和存储需要指定一个键, 值为要存储的DataFrame()
+        hdf5 存储 3维数据的二进制文件
             key1 dataframe1二维数据
             key2 dataframe2二维数据
-        pd.read_hdf(path, key=)
+        pd.read_hdf(path, key=, mode=,)
+            path: 读取的路径
+            key: 读取的键
+            mode: 打开文件的方式
         df.to_hdf(path, key=)
+            path: 保存的路径
+            key: 保存的键
+        拓展:
+            优先选择使用hdf5文件存储
+            HDF5在存储的时候是支持压缩的, 使用的方式是blosc, 这个速度最快的也是pandas默认支持的
+            使用压缩可以提高磁盘利用率, 节省空间
+            HDF5还是跨平台的, 可以轻松迁移到hadoop上面
+
     4.5.3 JSON
+        json是我们常用的一种数据交换格式, 在前后端的交互中经常使用到, 也会在存储的时候选择这种格式
+
         pd.read_json(path)
-            orient="records"
-            lines=True
+            orient="records", 读取进来的json以怎样的格式去展示
+            lines=True, 是否按照行读取json对象, (以一行为一个样本)
+
         df.to_json(patn)
             orient="records"
             lines=True
