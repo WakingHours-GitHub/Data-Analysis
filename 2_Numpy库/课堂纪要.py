@@ -91,11 +91,11 @@ ndarray运算: (核心)
             numpy.array(object, dtype=None, copy=True, order='K', subok=False, ndmin=0) 深拷贝
             np.copy() 深拷贝
             np.asarray() 浅拷贝
-            深拷贝: 拷贝引用
-            浅拷贝: 复制一个新的对象
+             深拷贝: 复制一个新的对象, 不同的内存地址
+             浅拷贝: 拷贝引用, 地址
         3）生成固定范围的数组
             np.linspace(start, stop, num, endpoint, retstep, dtype)
-                生成: [start, end] 一共有num个等间距的点
+                生成: [start, stop] 一共有num个等间距的点
 
             np.arange(start, stop, step, dtype)
              -> range(start, stop, step)
