@@ -173,7 +173,7 @@ ndarray运算: (核心)
             np.logical_and(逻辑矩阵, 逻辑矩阵)
             np.logical_or(逻辑矩阵, 逻辑矩阵)
             # 例子: np.logical_and(temp > 0.5, temp < 0.1) 返回的仍然是逻辑矩阵
-                实际上就是矩阵做逻辑运算(
+                实际上就是矩阵做逻辑运算
 
     统计运算:
         统计指标函数
