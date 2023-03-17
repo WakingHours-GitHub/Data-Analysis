@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="88f96715-b6cc-4e9f-b71e-6b23ef7836e4" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/numpy/5_操作2.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/numpy/5_操作2.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/numpy/1_ndarray数组创建.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/numpy/1_ndarray数组创建.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +14,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -65,6 +66,8 @@
       <workItem from="1678243624634" duration="1774000" />
       <workItem from="1678259674332" duration="3608000" />
       <workItem from="1678669477776" duration="2973000" />
+      <workItem from="1678932904499" duration="3513000" />
+      <workItem from="1679018810712" duration="4170000" />
     </task>
     <servers />
   </component>
